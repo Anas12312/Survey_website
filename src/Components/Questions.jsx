@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Question from './Question'
+import { useRef } from 'react'
 
 export default function Questions() {
     const [questionNumber, setQuestionNumber] = useState(1)
     const nextQuestion = () => {
+        const q = questionNumber;
         setQuestionNumber(questionNumber + 1)
+        progressBarRef.current.style.width = `${(q/4)*100}%`;
     }
+
+    const progressBarRef = useRef(null)
+
     return (
         <div className='h-full w-full relative'>
-      <div className='absolute top-0 w-full h-1 bg-white transition-all'>
-                <div className={`w-${questionNumber}/4 h-1 bg-[#0445af]`}>
+            <div className='absolute top-0 w-full h-1 bg-white transition-all'>
+                <div ref={progressBarRef} className={`w-0 h-1 bg-[#0445af]`}>
 
                 </div>
             </div>
@@ -59,8 +65,8 @@ export default function Questions() {
                             nextQuestion={nextQuestion}
                         />
                         <div className='h-full w-[50%] overflow-hidden'>
-                        <img className='object-fit w-full' src="../../public/image2.avif" alt="" />
-                    </div>
+                            <img className='object-fit w-full' src="../../public/image2.avif" alt="" />
+                        </div>
                     </div>
                 ) : questionNumber == 3 ? (
                     <div className='flex h-full w-full'>
@@ -83,8 +89,8 @@ export default function Questions() {
                             nextQuestion={nextQuestion}
                         />
                         <div className='h-full w-[50%] overflow-hidden'>
-                        <img className='object-fit w-full' src="../../public/image3.avif" alt="" />
-                    </div>
+                            <img className='object-fit w-full' src="../../public/image3.avif" alt="" />
+                        </div>
                     </div>
                 ) : (
                     <div className='flex h-full w-full'>
@@ -103,8 +109,8 @@ export default function Questions() {
                             nextQuestion={nextQuestion}
                         />
                         <div className='h-full w-[50%] overflow-hidden'>
-                        <img className='object-fit w-full' src="../../public/image4.avif" alt="" />
-                    </div>
+                            <img className='object-fit w-full' src="../../public/image4.avif" alt="" />
+                        </div>
                     </div>
                 )
             )}
