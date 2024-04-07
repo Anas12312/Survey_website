@@ -7,7 +7,12 @@ export default function Questions() {
         setQuestionNumber(questionNumber + 1)
     }
     return (
-        <div className='h-full w-full'>
+        <div className='h-full w-full relative'>
+      <div className='absolute top-0 w-full h-1 bg-white transition-all'>
+                <div className={`w-${questionNumber}/4 h-1 bg-[#0445af]`}>
+
+                </div>
+            </div>
             {questionNumber == 1 ? (
                 <div className='flex h-full w-full'>
                     <Question
