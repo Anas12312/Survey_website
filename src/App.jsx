@@ -7,7 +7,7 @@ function App() {
 
   return (
 
-    <div className='w-screen h-screen '>
+    <div className='w-screen h-screen flex justify-center items-center bg-gray-200'>
       <Questions />
     </div>
   )
