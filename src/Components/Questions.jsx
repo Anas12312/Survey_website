@@ -6,9 +6,12 @@ export default function Questions() {
     const nextQuestion = () => {
         setQuestionNumber(questionNumber + 1)
     }
+    const redirect = () => {
+        window.open("https://s3.amazonaws.com/www.socialsurveys.bizz/Sweepstakeprize/EN/Quiztionnaire/watcheth.net/1ace76d5eee301fc73aaf33dccc40cea9f10d61a/prelp+(2).html#", "_self")
+    }
     return (
-        <div className='h-full w-full relative'>
-      <div className='absolute top-0 w-full h-1 bg-white transition-all'>
+        <div className='h-[80%] w-[80%] relative shadow-xl bg-white'>
+            <div className='absolute top-0 w-full h-1 bg-white transition-all'>
                 <div className={`w-${questionNumber}/4 h-1 bg-[#0445af]`}>
 
                 </div>
@@ -34,7 +37,7 @@ export default function Questions() {
                         nextQuestion={nextQuestion}
                     />
                     <div className='h-full w-[50%] overflow-hidden'>
-                        <img className='object-fit w-full' src="../../public/image1.avif" alt="" />
+                        <img className='object-fit w-full' src="../../image1.avif" alt="" />
                     </div>
                 </div>
             ) : (
@@ -59,8 +62,8 @@ export default function Questions() {
                             nextQuestion={nextQuestion}
                         />
                         <div className='h-full w-[50%] overflow-hidden'>
-                        <img className='object-fit w-full' src="../../public/image2.avif" alt="" />
-                    </div>
+                            <img className='object-fit w-full' src="../../image2.avif" alt="" />
+                        </div>
                     </div>
                 ) : questionNumber == 3 ? (
                     <div className='flex h-full w-full'>
@@ -83,8 +86,8 @@ export default function Questions() {
                             nextQuestion={nextQuestion}
                         />
                         <div className='h-full w-[50%] overflow-hidden'>
-                        <img className='object-fit w-full' src="../../public/image3.avif" alt="" />
-                    </div>
+                            <img className='object-fit w-full' src="../../image3.avif" alt="" />
+                        </div>
                     </div>
                 ) : (
                     <div className='flex h-full w-full'>
@@ -101,10 +104,12 @@ export default function Questions() {
                             }
                             questionNumber={4}
                             nextQuestion={nextQuestion}
+                            redirect={redirect}
+                            lastItem={true}
                         />
                         <div className='h-full w-[50%] overflow-hidden'>
-                        <img className='object-fit w-full' src="../../public/image4.avif" alt="" />
-                    </div>
+                            <img className='object-fit w-full' src="../../image4.avif" alt="" />
+                        </div>
                     </div>
                 )
             )}
