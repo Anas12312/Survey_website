@@ -6,6 +6,7 @@ import Questions from './Components/Questions'
 function App() {
 
   return (
+
     <div className='w-screen h-screen '>
       <Questions />
     </div>
